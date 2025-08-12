@@ -1,0 +1,344 @@
+package Day4;
+import java.util.*;
+public class CountOfEven {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter the starting range");
+		int num1=sc.nextInt();
+		System.out.println("enter the ending range");
+		int num2=sc.nextInt();
+		int even=0;
+		int odd=0;
+		for(int i=num1;i<=num2;i++) 
+    {
+			if(i%2==0) 
+      {
+				even++;
+			}
+			else        //if(i%2!=0)
+      {         
+				odd++;
+			}
+		}
+		System.out.println("There are "+even+" even numbers between the numbers "+num1+" and "+num2);
+		System.out.println("There are "+odd+" odd numbers between the numbers "+num1+" and "+num2);
+	}
+}
+
+
+package Day4;
+import java.util.*;
+//print the total sum as single digit
+public class CountTheDigits {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter a number");
+		int num=sc.nextInt();
+		int count=0;
+		while(num>9) 
+    {  
+			int sum=0;
+			while(num>0) 
+      {
+			    int num1=num%10; //or num/=10   //one digit(sum)
+			    sum+=num1;          
+			    count++;           //   count++
+			    num/=10;
+			}
+			num=sum;
+		}
+		System.out.println("The total sum of the digits: "+num);
+	}
+}
+
+
+package Day4;
+public class Even {
+	public static void main(String[] args) {
+		int num=5;
+		for(int i=0;i<=num;i++) 
+		{
+			System.out.println(i++);
+		}
+		System.out.println("");
+		System.out.println("Reverse");
+		for(int i=10;i>=0;i--) 
+		{
+			System.out.println(i);
+		}
+		System.out.println("");
+		System.out.println("Even Reverse");
+		for(int i=10;i>=0;i--) 
+		{
+			System.out.println(i--);
+		}
+	}
+}
+
+
+package Day4;
+public class F_Loop {
+	public static void main(String[] args) {
+		int num=5;
+		for(int i=0;i<num;i++) 
+		{
+			System.out.println(i);
+		}
+	}
+}
+
+
+package Day4;
+public class W_loop {
+	public static void main(String[] args) {
+		int num=20;
+		while(num>=0) 
+		{
+			System.out.println(num);
+			num--;
+		}
+	}
+}
+
+
+
+package Day4;
+import java.util.*;
+public class Factorial {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter a number");
+		int num=sc.nextInt();
+		int fact=1;
+		for(int i=num;i>0;i--) 
+		{
+			fact*=i;
+		}
+		System.out.println("Factorial of "+num+"="+fact);
+	}
+}
+
+
+package Day4;
+import java.util.*;
+public class FactorsOfNo {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter the number");
+		int num=sc.nextInt();
+		int count=0;
+		System.out.println("Factors of "+num+" is:");
+		for(int i=1;i<=num;i++) 
+		{
+			if(num%i==0) 
+			{
+				System.out.println(i);
+				count++;
+			}
+		}
+		System.out.println("Count of Factors: "+count);
+		if(count==2) 
+		{
+			System.out.println("prime");
+	    }
+	    else 
+	    {
+		   System.out.println("Not prime");
+	    }
+	}
+}
+
+
+
+package Day4;
+import java.util.*;
+public class GcdOfNo {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter the number 1");
+		int num1=sc.nextInt();
+		System.out.println("enter the number 2");
+		int num2=sc.nextInt();
+		int result=0;
+		int min=(num1<num2)?num1:num2;
+		for(int i=min;i>0;i--) 
+		{
+			if(num1%i==0 && num2%i==0) 
+			{
+				result=i;
+				break;
+			}
+		}
+		System.out.println("The GCD of "+num1+" and "+num2+" is "+result);
+	}
+}
+
+
+
+package Day4;
+import java.util.*;
+public class PrimeOrNot {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter a number");
+		int num=sc.nextInt();
+		int count=0;
+		for(int i=2;i<=num;i++) 
+		{
+			if(num%i==0) 
+			{
+				count++;
+			}//exactly the no contins 2 factors=prime
+		}
+		if(count==1)//start is 2 not 1 so count==1
+		{
+			System.out.println("Prime Number");
+		}
+	    else 
+	    {
+		   System.out.println("Not a Prime Number");
+	    }
+	}
+}
+
+
+package Day4;
+import java.util.*;
+public class ReverseTheDigit {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the number");
+		int num=sc.nextInt();
+		int rev=0;
+		System.out.println("Reversed Number");
+		while(num>0) 
+		{
+			int num1=num%10;
+			rev=rev*10+num1;  
+			num/=10;
+		}
+		System.out.println(rev);
+	}
+ // another way 
+	//for integers only
+	//while(num>0) 
+ // {
+	//   int num1=num%10;
+	//   System.out.print(" "+num1);   
+	//   num/=10;
+    //}
+}
+
+
+
+HOMEWORK:
+package day4hw;
+import java.util.*;
+//if the input no is splited and the individual number is powered by  digitcount of the input
+public class AmstrongNo {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter the number");
+		int num=sc.nextInt();
+		int onum=num;
+		int temp=num;
+		int count=0;
+		while(temp!=0) 
+		{
+			count++;
+			temp/=10;
+		}
+		int sum=0;
+		temp=num;
+		while(temp!=0) 
+		{
+			int num2=temp%10;
+			int result=1;
+			for (int i = 0; i < count; i++) 
+			{
+                result *= num2;
+            }
+			sum+=result;
+			temp/=10;
+		}
+		if(sum==onum) 
+		{
+			System.out.println(onum+" is a Amstrong Number");
+		}
+		else 
+		{
+			System.out.println(onum+" is Not a Amstrong Number");
+		}
+	}
+}
+
+
+package day4hw;
+import java.util.*;
+public class Fibonanci {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int num=sc.nextInt();
+		int a=0,b=1,count=0;
+		System.out.println("fibonanci series");
+		System.out.print(a+" ");
+		System.out.print(b);
+		for(int i=2;i<num;i++) 
+		{
+			int temp=a+b;
+			System.out.print(" "+temp);
+			a=b;
+			b=temp;
+		}
+	}
+}
+
+
+
+package day4hw;
+import java.util.*;
+//Write a program to simulate the duel and determine the winner based on their output scores.
+public class GcdMatch {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+        int g=sc.nextInt();
+        int m=sc.nextInt();
+        int t=sc.nextInt();
+        int gcd=0;
+        int gmin=(g<t)?g:t;
+        int mmin=(m<t)?m:t;
+            if(g==m)
+            {     //both have equal scores
+                System.out.println("It's a draw!");
+            }
+            else
+            {
+                for(int i=1;i<=gmin;i++)
+                {
+                    for(int j=1;j<=mmin;j++)
+                    {
+                        if(g%i==0 && t%i==0)
+                        {                      //gokul's turn
+                            gcd=i;             //gcd finding
+                            t=t-gcd;           //sub the gcd from total score
+                            if(t==0)
+                            {
+                                System.out.println("Winner: Gokul");
+                            }
+                        }
+                        if(m%j==0 && t%j==0)
+                        {                         //minor's turn
+                            gcd=j;
+                            t=t-gcd;
+                            if(t==0)
+                            {
+                                System.out.println("Winner: Minor");
+                            }
+                        }
+                    }
+                }  
+            }
+	   }
+}
+
+
