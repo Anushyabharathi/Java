@@ -1,0 +1,90 @@
+package Day5;
+import java.util.*;
+public class Arr {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+//		int arr[]=new int[4];
+//		arr[0]=10;
+//		arr[1]=20;
+//		arr[2]=30;
+//		arr[3]=40;
+//		System.out.println(arr[3]);
+//		for(int i=0;i<arr.length;i++)        //for(int num:arr){
+//		{
+//		    System.out.print(arr[i]+" ");       //    syso(num);}
+//		}
+//		System.out.println(" ");
+//		//reverse printing
+//		for(int i=arr.length-1;i>=0;i--) 
+//		{
+//			System.out.print(arr[i]+" ");
+//		}
+		//get the input from user
+		System.out.println("enter the size of the array");
+		int size=sc.nextInt();     //get the size
+		int array[]=new int[size];  //declare the arr
+		System.out.println("enter the elements of the array");
+		for(int i=0;i<size;i++) 
+		{
+			array[i]=sc.nextInt();  //get the element one by one and store in arr
+		}
+		System.out.println("Array elements");
+		for(int i=0;i<size;i++) {
+			System.out.print(array[i]+" ");
+		}
+		System.out.println();
+		//print the even index (not even numbers)from the array 
+		System.out.println("even index array elements");
+		for(int i=0;i<size;i++) 
+		{
+			if(i%2==0) 
+			{
+				System.out.print(array[i]+" ");
+			}
+		}
+		//print the max element 
+		int max=array[0];
+		for(int i=0;i<size;i++) 
+		{
+			if(array[i]>max)           //if min: (array[i]<max)
+				{
+					max=array[i];
+				}
+		}
+		System.out.println("max element in the array "+max);
+	}
+}
+
+
+
+package Day5;
+import java.util.*;
+public class PalindromeNo {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int num=sc.nextInt();
+		int originalnum=num;
+		int rev=0;
+		while(num>0) 
+		{
+			int temp=num%10;
+			rev=rev*10+temp;
+			num/=10;
+		}
+		if(rev==originalnum) 
+		{
+			System.out.println(originalnum+" is Palindrome");
+		}
+		else 
+		{
+			System.out.println(originalnum+" is not a Palindrome");
+		}
+	}
+}
+
+
+
+HOMEWOR -Hackerrank problems:
+yellowmatics-looping and array
+
+
