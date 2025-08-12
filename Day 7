@@ -1,0 +1,164 @@
+package Day7;
+import java.lang.String;
+public class StringMethods {
+	public static void main(String[] args) {
+		String str1=" Anu ";              //object creating using literls
+		String str2="Anu Bharathi";
+		String str=new String("Irene");  //object creating using new keyword
+		System.out.println(str1==str);  //check the object ref not content
+		System.out.println(str1.equals(str1));
+		System.out.println(str1.equalsIgnoreCase(str1));
+		System.out.println(str2.length());
+		System.out.println(str1.trim().length());
+		System.out.println(str2.substring(0,3));
+		System.out.println(str2.substring(4));
+		System.out.println(str2.contains("Anu"));
+		System.out.println(str2.startsWith("A"));
+		System.out.println(str2.endsWith("i"));
+		System.out.println(str2.charAt(7));
+		System.out.println(str1.trim().concat("bharathi"));
+		System.out.println(str2.toUpperCase());
+		System.out.println(str.toLowerCase());
+		String word[]=str2.split(" ");
+		for(String i:word) 
+		{
+			System.out.println(i);
+		}
+	}
+}
+
+
+
+package Day7;
+import java.lang.String;
+public class StringBufferMethods {
+	public static void main(String[] args) {  
+		StringBuffer str=new StringBuffer("Anu");   //synchronized
+		System.out.println(str);
+		System.out.println(str.append(" Bharathi"));
+		System.out.println(str.insert(3,"shya"));
+		System.out.println(str.delete(3,8));
+		System.out.println(str.replace(0,3," "));
+		System.out.println(str.reverse());
+//reverse the string and then print it
+		StringBuffer sb=new StringBuffer("Hello World");
+		StringBuffer a=sb.reverse();
+		String b=a.toString();
+		System.out.println(b);
+	}
+}
+
+
+
+package Day7;
+import java.util.Scanner;
+public class MethodEg {
+//Method 
+	public int div(int x,int y)            //1.with arg with return type
+	{
+		return x*y;	
+	}
+	public void display()                  //2.Without arg and without return type
+	{
+		System.out.println("Without arg and without return type example here");
+	}
+	public void equal(int x,int y)         //3.With arg and without return type
+	{
+		if(x==y) 
+    {
+			System.out.println("Equal");
+		}
+		else 
+    {
+			System.out.println("Not equal");
+		}
+	}
+	public String print()                  //4.without arg with return type
+	{
+		return "without arg with return type";
+	}
+	public static void main(String[] args) {
+		MethodEg obj=new MethodEg();            //object creation for the method
+		Scanner sc=new Scanner(System.in);      //object creation for input
+		int a=sc.nextInt();
+		int b=sc.nextInt();
+		int result=obj.mul(a,b);
+		System.out.println(result);
+		obj.display();
+		obj.equal(a,b);
+		String res=obj.print();
+		System.out.println(res);
+   }
+}
+
+
+
+package Day7;
+import java.util.Scanner;
+public class LowerUpper {
+	public char lowertoupper(char x) {
+		char upper=(char)(x-32);
+		return upper;
+	}
+	public char uppertolower(char x) {
+		char lower=(char)(x+32);
+		return lower;
+	}
+	public static void main(String[] args) {
+		LowerUpper obj=new LowerUpper();
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter a char in lower");
+		char A=sc.next().charAt(0);
+		char upper1=obj.lowertoupper(A);
+		System.out.println(upper1);
+		System.out.println("enter a char in upper");
+		char a=sc.next().charAt(0);
+		char lower1=obj.uppertolower(a);
+		System.out.println(lower1);
+	}
+}
+
+
+HOMEWORK:
+package day7hw;
+import java.util.Scanner;
+public class UpperLower {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+//lower to upper
+		System.out.println("enter a lowercase string");
+		String str=sc.nextLine();
+		char c,upper=0;
+		for(int i=0;i<str.length();i++) 
+		{
+			c=str.charAt(i);
+			upper=(char)(c-32);
+			System.out.print(upper);
+		}
+		System.out.println();
+//upper to lower
+		System.out.println("enter a uppercase string");
+		String str2=sc.nextLine();
+		char c2,lower=0;
+		for(int i=0;i<str2.length();i++) 
+		{
+			c2=str2.charAt(i);
+			lower=(char)(c2+32);
+			System.out.print(lower);
+		}
+		System.out.println();
+//toggle case
+		System.out.println("enter a string");
+		String str3=sc.nextLine();
+		char c3,toggle=0;
+		System.out.println("String in Togglecase:");
+		for(int i=0;i<str3.length();i++) 
+		{
+			c3=str3.charAt(i);
+			toggle=(c3>='A' && c3<='Z')?(char)(c3+32):(char)(c3-32);
+			System.out.print(toggle);
+		}
+	}
+}
+
+
