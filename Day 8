@@ -15,9 +15,6 @@ public class StaticVar {
 	}
 }
 
-
-
-
 package Day8;
 public class Employee {
 	int empid=9408;
@@ -334,7 +331,6 @@ public class InheritanceConcepts {
 		d.daughterproperty();     
 	}
 }
-
 
 
 
