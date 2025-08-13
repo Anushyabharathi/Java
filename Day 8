@@ -1,0 +1,162 @@
+package Day8;
+public class StaticVar {
+	int sprno;               //instance var
+	String name;             //instance var
+	static String dept="CSE" ;  //static var
+	public static void main(String[] args) {
+//create obj to access the instance var
+		StaticVar obj=new StaticVar();
+		System.out.println(obj.sprno);   //print default value of datatype
+        System.out.println(obj.name); //print default value
+//no need to create a obj to access the static var
+        System.out.println(StaticVar.dept);
+//update the static var
+        StaticVar.dept=" CSE B";
+	}
+}
+
+
+
+
+package Day8;
+public class Employee {
+	int empid=9408;
+	String empname="Anu";
+	static String companyname="ZZZ";
+    public void details(int a,String b)    //concrete method
+    {
+    	System.out.println(a+"-"+b+"-"+companyname);
+    }
+    public static void display(int x)     //static method
+    {
+    	Employee.companyname="Wipro";
+    	System.out.println(x+" "+companyname);
+    }
+	public static void main(String[] args) {   //best eg of static method
+		Employee obj=new Employee(); 
+		System.out.println(obj.empid+" "+obj.empname+" "+Employee.companyname);
+        Employee.companyname="XYZ";
+ //instance methods calling
+        obj.details(9407,"bharathi");
+        obj.details(9378,"Divya");
+        obj.details(9408,"Kajol");
+ //static method calling
+        Employee.display(9777);
+        Employee.display(9778);
+	}
+}
+
+
+package Day8;
+public class StaticBlock {
+	static       //executed before main method content
+	{
+		System.out.print("Hello "); 
+	}
+	public static void main(String[] args) {
+		System.out.println("world");
+	}
+}
+
+
+package Day8;
+public class StaticEg {
+	static                         //static block
+	{
+		System.out.println("         Bank Details");
+		System.out.println("Accno"+"  "+"Name"+"      "+"Acctype"+"   "+"Branch");
+		System.out.println("---------------------------------");
+	}
+	int accno=77700;
+	String name="Anu";
+	static String acctype="Savings";     //static var
+	static String branch="xxx";          //static var
+	public void display(int a,String b)  //instance method
+	{
+		System.out.println(a+"   "+b+"    "+acctype+"   "+branch);
+	}
+	public static void details(int a,String b )    //static method
+	{
+		StaticEg.acctype="Joint";
+		System.out.println(a+"   "+b+"    "+acctype+"     "+branch);
+	}
+	public static void main(String[] args) {
+		StaticEg obj=new StaticEg();
+		System.out.println(obj.accno+"   "+obj.name+"      "+acctype+"   "+branch);
+		StaticEg.branch="XYZ";
+		obj.display(88800,"Shree");           //concrete method calling
+		obj.display(99900,"Divya");
+		StaticEg.details(11100,"Kajol");      //static method calling
+		StaticEg.details(22200,"Irene");
+	}
+}
+
+
+DIFFERENT WAYS TO PRINT VALUES 
+package Day8;
+//1.access the instance var by using creating aobject then print the values by using obj name
+public class WaysToPrintValues {
+	int age=5;
+	String name="Anu";
+	public static void main(String[] args) {
+		WaysToPrintValues obj=new WaysToPrintValues();
+		System.out.println(obj.age);
+		System.out.println(obj.name);
+	}
+}
+
+//2.access the instance var by using method then creating a object then print the method values
+public class WaysToPrintValues {
+	void display(int a,String b)
+	{
+		System.out.println(a+" "+b); 
+	}
+public static void main(String[] args) {
+	WaysToPrintValues obj=new WaysToPrintValues();  
+	obj.display(19,"Anu");  //method calling
+    }
+}
+
+//3.without creating a obj the constructor print the values present in the default constructor
+public class WaysToPrintValues {
+	WaysToPrintValues()     //default constructor 
+	{
+		System.out.println("Default construtor");
+	}
+	public static void main(String[] args) {
+		WaysToPrintValues obj=new WaysToPrintValues();
+	}
+}
+
+//4.without creating a obj the constructorprint the values present in the parameter constructor
+public class WaysToPrintValues {
+	WaysToPrintValues(int a,String b)   //parameterized constructor
+	{
+		System.out.println(a+" "+b);    
+		
+	}
+	public static void main(String[] args) {
+		WaysToPrintValues obj=new WaysToPrintValues(19,"Anu");
+	}
+}
+
+//5.assign the values to the instance var then print the vales outside the constructor using method
+public class WaysToPrintValues {
+	int age;     //instance var
+	String name;
+	WaysToPrintValues(int a,String b)   //parameterized constructor
+	{
+		age=a;     //values assigned to instance var
+		name=b;	
+	}
+	void display()
+	{
+		System.out.println(age+" "+name);    //access the values from the constructor bcz the instance var assigned
+	}
+	public static void main(String[] args) {
+		WaysToPrintValues obj=new WaysToPrintValues(19,"Anu");  
+		obj.display();  //method calling
+	}
+}
+
+
