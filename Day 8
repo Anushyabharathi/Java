@@ -92,6 +92,38 @@ public class StaticEg {
 }
 
 
+package Day8;
+public class Trip {
+	int day=1;
+	String place="kodaikanal";
+	String resort="APk";
+	int price=4000;
+	static
+	{
+		System.out.println("            TRIP DETAILS");
+		System.out.println("Day"+"  "+"Destination"+"     "+"Stay"+"    "+"Amount");
+		System.out.println("-----------------------------------");
+	}
+	public void tripdetails(int a,String b,String c,int d)
+	{
+		System.out.println(a+"  "+b+"       "+c+"    "+d);
+	}
+	public static void main(String[] args) {
+		Trip t=new Trip();
+		System.out.println(t.day+"  "+t.place+"       "+t.resort+"      "+t.price);
+		Trip t1=new Trip();
+		t1.tripdetails(2,"ooty","hesan",5000);
+		Trip t2=new Trip();
+		t2.tripdetails(3,"okanakal","ahan",3000);
+		Trip t3=new Trip();
+		t3.tripdetails(4,"yelagiri","Jhumna",6000);
+		Trip t4=new Trip();
+		t4.tripdetails(4,"thirvalley","Meganas",7000);
+	}
+}
+
+
+
 DIFFERENT WAYS TO PRINT VALUES 
 package Day8;
 //1.access the instance var by using creating aobject then print the values by using obj name
@@ -158,5 +190,153 @@ public class WaysToPrintValues {
 		obj.display();  //method calling
 	}
 }
+
+
+
+package Day8;
+//1.differentiate the local and instance variables
+public class ThisKeyword {
+	int price;
+	String product;
+	ThisKeyword(int price,String product)
+	{
+		this.price=price;         
+		this.product=product;
+		System.out.println(product+" "+price);
+	}
+	public static void main(String[] args) {
+		ThisKeyword t=new ThisKeyword(200,"Eyeliner");
+	}
+}
+//2.invoke the current class method
+public class ThisKeyword {
+	void display()
+	{
+		System.out.println("Its tym to code");
+	}
+	void show()
+	{
+		System.out.println("hurry up");
+		this.display();        //invoke the another method
+	}
+	public static void main(String[] args) {
+		ThisKeyword t=new ThisKeyword();
+		t.show();
+	}
+}
+
+
+package Day8;
+public class ConstructorOverloding {
+ //ConstructorOverloding: same name but parameter different
+	ConstructorOverloding(int a)
+	{
+		System.out.println(a);
+	}
+	ConstructorOverloding(float b)    
+	{
+		System.out.println(b);
+	}
+	public static void main(String[] args) {
+		ConstructorOverloding obj1= new ConstructorOverloding(5);
+		ConstructorOverloding obj2=new ConstructorOverloding(5.5f);
+	}
+}
+
+
+
+
+package Day8;
+//1.Single Level
+class dad
+{
+	void dadproperty()
+	{
+		System.out.println("dad");
+	}
+}
+class son extends dad    //extend keyword to access the parent property
+{
+	void sonproperty()
+	{
+		System.out.println("Son");
+	}
+}
+public class InheritanceConcepts {
+	public static void main(String[] args) {
+		son s=new son();
+		s.dadproperty(); //access the parent behaviour
+		s.sonproperty();
+	}
+}
+
+
+//2.MULTILEVEL 
+class grandpa
+{
+	void grandpaproperty()
+	{
+		System.out.println("Grand Father");
+	}
+}class dad extends grandpa   //extend keyword to access the parent property
+{
+	void dadproperty()
+	{
+		System.out.println("Dad");
+	}
+}
+class son extends dad    //extend keyword to access the parent property
+{
+	void sonproperty()
+	{
+		System.out.println("Son");
+	}
+}
+public class InheritanceConcepts {
+	public static void main(String[] args) {
+		son s=new son();
+		s.grandpaproperty(); //access the parent behaviour
+		s.dadproperty(); //access the parent behaviour
+		s.sonproperty();
+	}
+}
+
+
+//3.HIERACHICAL
+class dad
+{
+	void dadproperty()
+	{
+		System.out.println("dad");
+	}
+}
+class daughter extends dad
+{
+	void daughterproperty()
+	{
+		System.out.println("Daughter");
+	}
+}
+class son extends dad    //extend keyword to access the parent property
+{
+	void sonproperty()
+	{
+		System.out.println("Son");
+	}
+}
+public class InheritanceConcepts {
+	public static void main(String[] args) {
+		son s=new son();
+		s.dadproperty();     //access the parent(dad) behaviour
+		s.sonproperty();
+		daughter d=new daughter();
+		d.dadproperty();    //access the parent(dad) behaviour
+		d.daughterproperty();     
+	}
+}
+
+
+
+
 
 
