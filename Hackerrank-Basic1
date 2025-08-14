@@ -1,0 +1,302 @@
+YM1019
+//The program should take a two-digit number as input and output the sum of its digits.
+
+import java.io.*;
+import java.util.*;
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int a=sc.nextInt();
+        int num1=a/10;
+        int num2=a%10;
+        System.out.println(num1+num2);
+    }
+}
+
+YM1024
+//If the number unravels as even, the Oracle chants, "Behold, an Even Enigma!",
+//If the number carries the whisper of oddity, the Oracle declares, "Discover the Odd Symphony!".
+
+import java.io.*;
+import java.util.*;
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int a=sc.nextInt();
+        System.out.println((a%2==0)?"Behold, an Even Enigma!":"Discover the Odd Symphony!");
+    }
+}
+
+YM1034
+// Lucky numbers:positive integers containing only the digits 4 and 7
+//The response should echo "YES" (without the quotes) if the roll number rollNumber is deemed almost lucky. 
+//Conversely, it should resonate "NO" (without the quotes) if the magic doesn't quite align.
+
+import java.io.*;
+import java.util.*;
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int num=sc.nextInt();
+        if(num==47 || num==74 || num==477 || num==747 || num==774 || num==744 || num==474 ||
+          num==447)
+        {
+            System.out.println("YES");
+        }
+        else
+        {
+            System.out.println("NO");
+        }
+    }
+}
+
+OR
+
+import java.io.*;
+import java.util.*;
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int num=sc.nextInt();
+        if(num>=1 && num<=99){
+            int num1=num/10;
+            int num2=num%10;
+            if(num1!=num2)
+            {
+                if(num1==4 || num1==7 && num2==4 || num2==7)
+                {
+                    System.out.println("YES");
+                }
+                else
+                {
+                    System.out.println("NO");
+                }
+            }
+        }
+        if(num>=100 && num<=999)
+        {
+            int num1=num/10;
+            int num2=(num%100)/10;
+            int num3=num%10;
+            if(num1!=num2 || num1!=num3 ||num1==num2 || num1==num3)
+            {
+                if(num1==4 || num1==7 && num2==4 || num2==7 && num3==4 || num3==7)
+                {
+                    System.out.println("YES");
+                }
+                else
+                {
+                    System.out.println("NO");
+                }
+            }
+        }
+    }
+}
+
+
+YM1037
+//Input Format
+The first input is an integer "n," representing the number of levels (1 ≤ n ≤ 50).
+The second input is an integer "k," representing the required sum of points (1 ≤ k ≤ 250).
+//Output Format
+The output is a single number – the minimum count n that Alex needs to replay to achieve the target sum.
+
+import java.io.*;
+import java.util.*;
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int k=sc.nextInt();
+        int b=k-(2*n);
+        if(b==0)
+        {
+            int a=1;
+            System.out.println("The minimum count of n levels is "+a);
+        }
+        else if(b>2)
+        {
+            System.out.println("The minimum count of n levels is 2");
+        }
+        else
+        {
+            System.out.println("The minimum count of n levels is "+b);
+        } 
+    }
+}
+
+
+YM1038
+// Write a program to simulate the duel and determine the winner based on their output scores
+Explanation: Initial Total Power: 20 Gokul's turn: GCD of 8 and 20 is 4. 
+Gokul_Output = 4, Total Power = 16. Minor's turn: GCD of 12 and 16 is 4.
+Minor_Output = 4, Total Power = 12. Gokul's turn: GCD of 8 and 12 is 4. 
+Gokul_Output = 8, Total Power = 8. Minor's turn: GCD of 12 and 8 is 4.
+Minor_Output = 8, Total Power = 4. Gokul's turn: GCD of 8 and 4 is 4. 
+Gokul_Output = 12, Total Power = 0.
+
+import java.io.*;
+import java.util.*;
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int g=sc.nextInt();
+        int m=sc.nextInt();
+        int t=sc.nextInt();
+        int gcd=0;
+        int gmin=(g<t)?g:t;
+        int mmin=(m<t)?m:t;
+            if(g==m)
+            {
+                System.out.println("It's a draw!");
+            }
+            else
+            {
+                for(int i=1;i<=gmin;i++)
+                {
+                    for(int j=1;j<=mmin;j++)
+                    {
+                        if(g%i==0 && t%i==0)
+                        {
+                            gcd=i;
+                            t=t-gcd;
+                            if(t==0)
+                            {
+                                System.out.println("Winner: Gokul");
+                            }
+                        }
+                        if(m%j==0 && t%j==0)
+                        {
+                            gcd=j;
+                            t=t-gcd;
+                            if(t==0)
+                            {
+                                System.out.println("Winner: Minor");
+                            }
+                        }
+                    }
+                }  
+            }
+    }
+}
+
+
+YM1028
+//The Solo Trail ticket costs R, The roundabout ticket cost R,The Monthly Pass, which offers unlimited access, costs $L.
+//Your task is to write a program that helps Professor Dynamics find the cheapest way to travel for the month.
+
+import java.io.*;
+import java.util.*;
+public class Solution {
+    public static void main(String[] args) {
+       Scanner sc=new Scanner(System.in);
+       int x=sc.nextInt();
+       int y=sc.nextInt();
+       Float s=sc.nextFloat();
+       Float r=sc.nextFloat(); 
+       Float l=sc.nextFloat();
+       if(s > r || (2 * s < r))
+       {
+           System.out.println("Invalid Input");
+       }
+       else{
+           Float a = x * s;
+           Float b = y * r;
+           Float combo=a+b;
+           if(l<combo)
+           {
+               System.out.println("Monthly Pass");
+           }
+           else
+           {
+               System.out.println("Solo Trail + Roundabout Ride");
+           }
+       }
+    }
+}
+
+
+YM1022
+//Print the coordinates of the midpoint in the format (x, y).
+
+import java.io.*;
+import java.util.*;
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int x1=sc.nextInt();
+        int y1=sc.nextInt();
+        int x2=sc.nextInt();
+        int y2=sc.nextInt();
+        Float a=(x1+x2)/2.0f;
+        Float b=(y1+y2)/2.0f;
+        System.out.println("Max's house is located at ("+a+", "+b+")");
+    }
+}
+
+YM1023
+//Write a program to calculate the exact length of the rope and 
+//the necessary carpet quantity based on the provided length and breadth of the ground.
+
+import java.io.*;
+import java.util.*;
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int l=sc.nextInt();
+        int b=sc.nextInt();
+        int r=(l+b)*2;
+        int c=l*b;
+        System.out.println("Rope Length: "+r+"m");
+        System.out.println("Carpet Quantity: "+c+"sqm");
+    }
+}
+
+
+YM1032
+//Write a program module to decode the traffic signals, ensuring a seamless journey for Jax through the vibrant streets of Codeopolis.
+
+import java.io.*;
+import java.util.*;
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String a=sc.nextLine();
+        if(a.equalsIgnoreCase("Red"))
+        {
+            System.out.println("Stop");
+        }
+        else if(a.equalsIgnoreCase("Green"))
+        {
+            System.out.println("Go");
+        }
+        else if(a.equalsIgnoreCase("yellow"))
+        {
+            System.out.println("Get Ready");
+        }
+        else
+        {
+            System.out.println("Invalid Input");
+        }
+    }
+}
+
+YM1035
+//The total number of people in the magical lineup 'n'. The minimum number of people in front of Alex 'a'. 
+The maximum number of people behind Alex 'b'. (0 ≤ a, b < n ≤ 100)
+//A mystical number representing the potential magical positions for Alex.
+
+import java.io.*;
+import java.util.*;
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int a=sc.nextInt();
+        int b=sc.nextInt();
+        int sum=a+b;
+        int sub=n-sum;
+        System.out.println(sub);
+    }
+}
+
