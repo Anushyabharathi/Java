@@ -1,0 +1,184 @@
+//USES OF SUPER KEYWORD
+package Day9;
+//1.Access parent class variables:If a child class has a variable with the same name as the parent class, 
+//you can use super to access the parent’s variable.
+class Parent
+{
+	int a=10;
+}
+class Child extends Parent
+{
+	int a=20;
+	void show()
+	{
+		System.out.println(a);    //refers the local instance var
+		System.out.println(super.a);   //refers the immediate super class instance var
+	}
+}
+public class SuperEg {
+	public static void main(String[] args) {
+		Child obj=new Child();
+		obj.show();
+	}
+}
+
+//2.Call parent class methods: If the child overrides a method from the parent,
+//you can still call the parent’s version
+class Parent
+{
+	void show()
+	{
+		System.out.println("hai from parent");
+	}
+}
+class Child extends Parent
+{
+	void view()
+	{
+		System.out.println("hello from child");
+	}
+	void display()
+	{
+		view();  //refers the child method
+		super.show();  //refers the immediate super class method
+	}
+}
+public class SuperEg {
+	public static void main(String[] args) {
+		Child obj=new Child();
+		obj.display();
+	}
+}
+
+//3.Call parent class constructor:You can use super() to call the parent class constructor
+//(must be the first statement in the child’s constructor).
+
+class Parent
+{
+	Parent()
+	{
+		System.out.println("parent constructor");
+	}
+}
+class Child extends Parent
+{
+	Child()
+	{
+		super(); //refers the immediate super class constructor we dont give this(super();) also the superclass constrctor runs
+		System.out.println("child constructor");//refers the child constructor
+
+	}
+}
+public class SuperEg {
+	public static void main(String[] args) {
+		Child obj=new Child();
+	}
+}
+
+
+
+ABSTRACTION
+package Day9;
+abstract class Dad     //You cannot create objects
+{
+	abstract void dadproperty();  //abstract methods inside abstract class:dont have any body
+}
+class Son extends Dad
+{
+	void dadproperty()
+	{
+		System.out.println("Dad property");    //the abstract class -abstract method body was given here
+	}
+	void sonproperty()
+	{
+		System.out.println("Son property");  //subclass concrete method
+	}
+}
+public class AbstractEg {
+	public static void main(String[] args) {
+		Dad obj=new Son();     //obj created for subclass to access the abstarct method but not subclass method
+		obj.dadproperty();
+		Son obj1=new Son();    //obj created for subclass to access the subclass method also the abstarct method
+		obj1.sonproperty(); 
+		obj1.dadproperty();
+	}
+}
+
+
+
+INTERFACE
+package Day9;
+interface Daddy          //You cannot create objects
+{
+//	int max=100;        //final var so dont change the values
+	void dadproperty();   //defautly abstract method no nee to put a abstract keyword
+	default void property()   //default keyword to create a default method
+	{
+		System.out.println("default method for dads property");
+	}
+}
+class Daughter implements Daddy
+{
+	public void dadproperty()   //must be public
+	{
+		System.out.println("Dad property");
+	}
+	void Daughterproperty()
+	{
+		System.out.println("son property");
+	}
+}
+public class InterfaceEg {
+	public static void main(String[] args) {
+		Daddy obj=new Daughter();
+		obj.dadproperty();
+		obj.property();
+		Daughter obj1=new Daughter();
+		obj1.Daughterproperty();
+		obj1.dadproperty();
+		obj1.property();
+	}
+}
+
+
+
+
+ACHIEVE MULTIPLE INHERITANCE BY USING INTERFACE
+package Day9;
+//using interface we achieve the multiple inheritance bcs it is not supported in java
+interface Print         //parent 1
+{
+	void display();
+}
+interface Copy          //parent 2
+{ 
+	void show();
+}
+class Xerox implements Print ,Copy   //child call both parents(multiple inheritance)
+{
+	public void display()   //parent 1 method
+	{
+		System.out.println("printing");
+	}
+	public void show()     //parent 2 method
+	{
+		System.out.println("copying");
+	}
+	void view()              //child method
+	{
+		System.out.println("xeroxing");
+	}
+}
+public class MultipleInheritance {
+	public static void main(String[] args) {
+		Xerox obj=new Xerox();
+		obj.display();
+		obj.show();
+		obj.view();
+	}
+}
+
+
+
+
+
