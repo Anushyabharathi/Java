@@ -157,7 +157,7 @@ public class WaysToPrintValues {
 	}
 }
 
-//4.without creating a obj the constructorprint the values present in the parameter constructor
+//4.without creating a obj the constructorprint the values present in the parameterized constructor
 public class WaysToPrintValues {
 	WaysToPrintValues(int a,String b)   //parameterized constructor
 	{
@@ -169,7 +169,7 @@ public class WaysToPrintValues {
 	}
 }
 
-//5.assign the values to the instance var then print the vales outside the constructor using method
+//5.assign the values to the instance var then print the values outside the constructor using method
 public class WaysToPrintValues {
 	int age;     //instance var
 	String name;
@@ -188,8 +188,7 @@ public class WaysToPrintValues {
 	}
 }
 
-
-
+THIS KEYWORD
 package Day8;
 //1.differentiate the local and instance variables
 public class ThisKeyword {
