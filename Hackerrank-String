@@ -1,0 +1,147 @@
+YM1068
+import java.io.*;
+import java.util.*;
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String a=sc.nextLine();
+        System.out.println("The magic within the string is "+a);
+    }
+}
+
+YM1069
+import java.io.*;
+import java.util.*;
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String a=sc.nextLine();
+        System.out.println("The cosmic resonance of your phrase unfolds: "+a);
+    }
+}
+
+YM1070
+//print the length of the string
+import java.io.*;
+import java.util.*;
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String a=sc.nextLine();
+        System.out.println("Quantum revelation! The quantum length of "+a+" is "+a.length()+".");
+    }
+}
+
+YM1071
+//check two strings equal or not
+import java.io.*;
+import java.util.*;
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String a=sc.nextLine();
+        String b=sc.nextLine();
+        if(a.equals(b))
+        {
+            System.out.println("Celestial Confirmation! The strings align.");
+        }
+        else
+        {
+            System.out.println("Galactic Discrepancy! The strings do not align.");
+        }
+    }
+}
+
+
+YM1072
+// finding the concatenation of the given two strings using string library functions.
+import java.io.*;
+import java.util.*;
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String a=sc.nextLine();
+        String b=sc.nextLine();
+        System.out.println("Friendship Rekindled! The concatenated string is "+a.concat(b)+".");
+    }
+}
+
+
+YM1073
+//LOwercase to uppercase and uppercase to lowercase
+import java.io.*;
+import java.util.*;
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String a=sc.nextLine();
+        System.out.println("Word Ascension Achieved! Behold the majestic transformation: "+a.toUpperCase()+".");
+    }
+}
+
+
+YM1074
+//check whether the string is plindrome or not
+import java.io.*;
+import java.util.*;
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String b=sc.nextLine();
+        StringBuffer a=new StringBuffer(b);
+        StringBuffer c=a.reverse();
+        String str=c.toString();
+        if(str.equals(b))
+        {
+            System.out.println("Palindrome Revelation! The string is a palindrome.");
+        }
+        else
+        {
+            System.out.println("Palindromic Mystery Unsolved! The string is not a palindrome.");
+        }
+    }
+}
+
+
+YM1075
+//togglecase
+import java.io.*;
+import java.util.*;
+public class Solution {
+    public static void main(String[] args) {
+       Scanner sc=new Scanner(System.in);
+        String a=sc.nextLine();
+        char c,toggle=0,cas=0;
+        System.out.print("Case Cascade Magic Unleashed! The ");
+        for(int i=0;i<a.length();i++)
+        {
+            c=a.charAt(i);
+            toggle=(c>='A' && c<='Z')?(char)(c+32):(char)(c-32);
+            System.out.print(toggle);
+        }
+        System.out.println(" transformation is complete.");
+    }
+}
+
+
+YM1076
+//print the number of vowels present in the string
+import java.io.*;
+import java.util.*;
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String a=sc.nextLine();
+        int count=0;
+        char c;
+        for(int i=0;i<a.length();i++)
+        {
+            c=Character.toLowerCase(a.charAt(i));
+            if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u')
+            {
+                 count++;
+            }
+        }
+        System.out.println("Vowel Voyage Completed! Number of vowels: "+count);
+    }
+}
