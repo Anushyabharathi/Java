@@ -1,0 +1,50 @@
+463.ISLAND PERIMETER
+
+//You are given row x col grid representing a map where grid[i][j] = 1 represents land and grid[i][j] = 0 represents water.
+//Determine the perimeter of the island.
+
+class Solution {
+    public int islandPerimeter(int[][] grid) {
+        int p=0;
+        for(int i=0;i<grid.length;i++)
+        {
+            for(int j=0;j<grid[0].length;j++)
+            {
+                if(grid[i][j]==1)
+                {
+                    p+=4;
+                   if(i>0 && grid[i-1][j]==1)
+                    {
+                        p-=2;
+                    }
+                    if(j>0 && grid[i][j-1]==1)
+                    {
+                        p-=2;
+                    }
+                }
+            }   
+        }
+        return p;
+    }
+}
+
+
+ARRAYS: 1.TWO SUM
+//Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+
+
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        for(int i=0;i<nums.length-1;i++)
+        {
+            for(int j=i+1;j<nums.length;j++)
+            {
+                if(nums[i]+nums[j]==target)
+                {
+                     return new int[] {i,j};
+                }
+            }
+        }
+        return new int[] {};
+    }
+}
