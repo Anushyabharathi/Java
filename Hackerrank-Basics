@@ -1,0 +1,193 @@
+YM1020
+// program that takes the total number of students and the desired number of study groups as input and outputs the number of students in 
+//each study group along with the count of remaining students
+
+import java.io.*;
+import java.util.*;
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int s=sc.nextInt();
+        int t=sc.nextInt();
+        int a=s/t;
+        int b=s%t;
+        System.out.println("The number of students in each team is "+a+" and left out is "+b);
+    }
+}
+
+YM1025
+// program for Xinyou that takes input from its color sensor and reveals the chromatic truth.
+import java.io.*;
+import java.util.*;
+public class Solution {
+    public static void main(String[] args) {
+       Scanner sc=new Scanner(System.in);
+       String s=sc.nextLine();
+       if(s.equals("RED"))
+       {
+           System.out.println("The Chromatic Horizon reveals: It is Dusk");
+       }
+       else if(s.equals("BLUE"))
+       {
+           System.out.println("The Chromatic Horizon whispers: It is Dawn");
+       }
+       else
+       {
+           System.out.println("The Chromatic Riddle unfolds: Invalid Input");
+       }
+    }
+}
+
+YM1027
+//program module that unravels the temporal mysteries, determining whether Zara will elegantly make her leap through time or face the whims of destiny.
+import java.io.*;
+import java.util.*;
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int x=sc.nextInt();
+        int y=sc.nextInt();
+        float h=sc.nextFloat();
+        float t=sc.nextFloat();
+        int time=x/y;
+        float diff=h-t;
+        if(h>=t)
+        {
+            if(time<=diff)
+            {
+                System.out.println("Yes");
+            }
+            else if(time>=diff)
+            {
+                System.out.println("No");
+            }
+        }
+        else
+        {
+            System.out.println("Invalid Input");
+        }
+    }
+}
+
+
+YM1029
+//Write a Java program module that scans the status of the space-age seat belts and determines whether it's a go for interstellar exploration.
+import java.io.*;
+import java.util.*;
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String s="engaged";
+        String w="disengaged";
+        String a=sc.nextLine();
+        String b=sc.nextLine();
+        String c=sc.nextLine();
+        if(a.equals(s) && b.equals(s) && c.equals(s))
+        {
+            System.out.println("Initiating Warp Drive!");
+        }
+        else if(a.equals(w) || b.equals(w) || c.equals(w))
+        {
+            System.out.println("Hold On! Some Belts are Adrift.");
+        }
+        else
+        {
+            System.out.println("Invalid Input");
+        }
+    }
+}
+
+YM1031
+//program to unveil the harmony or chaos in the tire air pressure dance.
+//If the tire pressure is less than 33 psi= "Inflate". If the tire pressure is greater than 33 psi="Deflate". If the tire pressure is exactly 33 psi= "Untouched".
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        float fl=sc.nextFloat();
+        float rl=sc.nextFloat();
+        float rr=sc.nextFloat();
+        float fr=sc.nextFloat();
+        if(fl>33)
+        {
+            System.out.println("Front-left : Deflate");
+        }
+        else if(fl<33)
+        {
+            System.out.println("Front-left : Inflate");
+        }
+        else if(fl==33){
+            System.out.println("Front-left : Untouched");
+        }
+        if(rl>33)
+        {
+            System.out.println("Rear-left : Deflate");
+        }
+        else if(rl<33)
+        {
+            System.out.println("Rear-left : Inflate");
+        }
+        else if(rl==33)
+        {
+            System.out.println("Rear-left : Untouched");
+        }
+        if(rr>33)
+        {
+            System.out.println("Rear-right : Deflate");
+        }
+        else if(rr<33)
+        {
+            System.out.println("Rear-right : Inflate");
+        }
+        else if(rr==33)
+        {
+            System.out.println("Rear-right : Untouched");
+        }
+        if(fr>33)
+        {
+            System.out.println("Front-right : Deflate");
+        }
+        else if(fr<33)
+        {
+            System.out.println("Front-right : Inflate");
+        }
+        else if(fr==33)
+        {
+            System.out.println("Front-right : Untouched");
+        }
+    }
+}
+
+YM1033
+//Write a program to check if it's possible to divide the watermelon into two even-weighted parts. If possible, print "YES," followed by the two parts' weights. If not, print "NO." 
+//If the input value for the weight is not within the valid range (1 ≤ w ≤ 100), print "Invalid Input."
+import java.io.*;
+import java.util.*;
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int w=sc.nextInt();
+        if(w>=1 && w<=100)
+        {
+            if(w%2==0)
+            {
+                System.out.println("YES");
+                int a=w/2;
+                System.out.println(a+" "+a);
+            }
+            else
+            {
+                System.out.println("NO");
+            }
+        }
+        else
+        {
+            System.out.println("Invalid Input");
+        }
+    }
+}
+
